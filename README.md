@@ -62,7 +62,7 @@
 
 ## [ Repository 테스트 ]
 
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductRepositoryTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductRepositoryTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductRepositoryTest.java)
 - **deleteAllInBatch, deleteAll 차이**
   - 각 테스크 메소드가 끝난 후 Repository 클린을 위해 AfterEach 어노테이션을 사용해 deleteAll과 deleteAllInBatch를 사용할 수 있습니다.
   - **deleteAllInBatch :** 테이블을 지울 때 외래키 조건 등 영향을 받기 때문에 삭제할 레포지토리 순서를 잘 계산해야 합니다.
@@ -73,26 +73,26 @@
 - 비지니스 계층 테스트 주의사항
   - 하나의 함수 테스트시는 문제 없지만 테스트 클래스 전체를 테스트할 때 레포지토리에 저장한 내용이 다른 테스트 함수에 영향을 줍니다. 이를 해결하기 위해 AfterEach 어노테이션을 사용합니다.
   - **@AfterEach**는 JUnit 5에서 제공하는 어노테이션으로, 테스트 메소드가 실행된 후에 매번 실행되어야 하는 메소드를 지정할 때 사용합니다. 이는 각 테스트가 다른 테스트에 영향을 주지 않도록 환경을 초기화하거나 정리하는 용도로 쓰입니다. 테스트 간의 독립성을 보장하여 어떤 테스트가 실패하거나 예외 상황에서도 다른 테스트가 올바르게 실행될 수 있도록 합니다. 메소드이름을 **tearDown** 으로하여 가독성을 높일 수 있습니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/order/OrderServiceTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/order/OrderServiceTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/order/OrderServiceTest.java)
 
 ## [ 컨트롤러 테스트 ]
 
 - **Presentation계층 테스트시 서비스 레이어 이하로는 모킹 처리하여 테스트 합니다.**
 - **Mock 개념 :** 컨틀롤러 테스트시 서비스 계층이나, 레포지토리는 잘 작동한다는 것을 가정하고 MockMvc라는 스프링에서 제공하는 테스트 프레임워크를 사용합니다.
 - **MockMvc :** Mock(가짜) 객체를 사용해 스프링 MVC 동작을 재현할 수 있는 테스트 프레임워크
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/product/ProductControllerTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/product/ProductControllerTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/product/ProductControllerTest.java)
 
 ## [ Mock에 대한 설명 ]
 
 - 여러 복잡한 서비스를 테스트할 때 Mock을 활용할 수 있습니다. 예를 들어 메일전송 서비스에서 메일을 항상 보낼 순 없기에 메일을 보내는 함수(ex Mailclient)를 Mock처리 할 수 있습니다 .그러나, Mock처리를 하면 해당 MailClient 함수의 반환 값이 없을 것이기 때문에 행위를 지정해 주어야 합니다. 이 때 사용 하는것이 Mockito 입니다. 이렇게 지정하는 것을 스터빙(stubbing) 이라 합니다.
 - **Mockito._when_(mailSendClient.sendEmail(_any_(String.class), _any_(String.class),_any_(String.class),_any_(String.class))).thenReturn(true);**
   - **Mockito의 when메서드를 사용해 모킹처리한 함수를 넣는다. 이 때 파라미터는 any 함수를 사용해 매개변수의 클래스를 넣어주고, thenReturn 함수를 사용해 반환 값을 정해준다.**
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
 
 ## [ BDDMockito ]
 
 - **Mockito를 상속받은 래핑 클래스로써, 모든 동작이 Mockito와 동일하나 BDD스타일로 커스텀한 것입니다.**
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
 
 ## [ 테스트 사용시 BeforeAll , BeforeEach 사용은 지양 ]
 
@@ -102,23 +102,23 @@
 
 - 값이나 환경에 대한 데이터들을 바꿔가면서 여러번 테스트하고 싶을 때 일반 Test어노테이션이 아니라 ParameterizedTest 어노테이션을 사용합니다.
 - **CsvSource 어노테이션 :** comma-separated values의 약자로 몇 가지 필드를 콤마(,)로 구분한 텍스트 데이터 파일로 해당 어노테이션에 값을 넣어 테스트합니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductTypeTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductTypeTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductTypeTest.java)
 
 ## [ DynamicTest ]
 
 - 단계 별로 행위 검증을 수행하고 싶을 때 사용, 일반 테스트 어노테이션이 아닌 TestFactory 어노테이션을 사용합니다. 리턴 값으로 Collection을 반환합니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/stock/StockDynamicTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/stock/StockDynamicTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/stock/StockDynamicTest.java)
 
 ## [ 테스트 환경 통합하기 ]
 
 - 테스트 환경을 통합하지 않고 전체 테스트를 진행하면 시간이 오래 거릴 수 있습니다. 그 이유는 테스트 진행시 각 클래스마다 스프링 부트를 별도로 띄워 실행하기 때문입니다. 이를 해결하기 위해 Support 클래스를 만들고 다른 클래스들이 해당 클래스를 상속 받아 사용하도록 할 수 있습니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/ControllerTestSupport.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/ControllerTestSupport.java)
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/IntegrationTestSupport.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/IntegrationTestSupport.java)
+- [코드 링크 1](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/controller/ControllerTestSupport.java)
+- [코드 링크 2](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/IntegrationTestSupport.java)
 
 ## [ 학습 테스트 작성 예시 ]
 
 - 잘 모르는 기능이나 라이브러리, 프레임워크를 학습하기 위해 작성하는 테스트 이며 Guava를 학습하는 예시 입니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/learning/GuavaLearningTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/learning/GuavaLearningTest.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/learning/GuavaLearningTest.java)
 
 ## [ REST Docs ]
 
@@ -131,23 +131,23 @@
 - [https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/)
 - [https://asciidoctor.org/](https://asciidoctor.org/)
 - IDE Marketplace에서 AssciiDoc 검색 후 아스키독 미리보기 설치를 해놓는 것이 좋습니다.
-- **의존성 주입 :** [https://github.com/KimYongJ/test_code/blob/main/build.gradle](https://github.com/KimYongJ/test_code/blob/main/build.gradle)
-- **RestDocs 기본 설정 클래스 생성 :** [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/RestDocsSupport.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/RestDocsSupport.java)
-- **RestDocs 구현 클래스 :** [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/product/ProductControllerDocsTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/product/ProductControllerDocsTest.java)
-- **테스트 코드를 작성 후 실행하면 설정한 build경로에 adoc파일들이 생성 :** [https://github.com/KimYongJ/test_code/tree/main/build/docs/asciidoc](https://github.com/KimYongJ/test_code/tree/main/build/docs/asciidoc)
-- **src폴더 → docs폴더 → asciidoc 폴더 → index.adoc파일 생성 → 그 안에 해당 문법에 맞게 작성합니다 :** [https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
-- **그래들의 Tasks → build → build 클릭시 빌드( or Tasks →documentation→asciidoctor) , 빌드 후 html 파일이 생성됩니다 :** [https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html](https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html)
+- **의존성 주입 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/build.gradle)
+- **RestDocs 기본 설정 클래스 생성 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/RestDocsSupport.java)
+- **RestDocs 구현 클래스 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/product/ProductControllerDocsTest.java)
+- **테스트 코드를 작성 후 실행하면 설정한 build경로에 adoc파일들이 생성 :** [코드 링크](https://github.com/KimYongJ/test_code/tree/main/build/docs/asciidoc)
+- **src폴더 → docs폴더 → asciidoc 폴더 → index.adoc파일 생성 → 그 안에 해당 문법에 맞게 작성합니다 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
+- **그래들의 Tasks → build → build 클릭시 빌드( or Tasks →documentation→asciidoctor) , 빌드 후 html 파일이 생성됩니다 :** [파일 링크](https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html)
 
 ## [ REST Docs 생성시 Optional한 데이터 표시법 ]
 
 - API에서 특정 값은 필수이고, 다른 것은 아닌 것이 있을 수 있습니다. 이 때 RestDoc 생성시 커스텀한 컬럼을 추가할 수 있습니다.
 - **test디렉토리안에 resources 디렉토리 → org → springframework → restdocs → templates 까지 만든 후 response, request의 템플릿을 만들 수 있습니다**
-  - [https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/request-fields.snippet](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/request-fields.snippet)
-  - [https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/response-fields.snippet](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/response-fields.snippet)
+  - [작성 링크 1](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/request-fields.snippet)
+  - [작성 링크 2](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/response-fields.snippet)
 
 ## [ 여러개의 REST Docs 합치는 방법 ]
 
-- **메인 index.adoc에서 include 명령어로 가능합니다. :** [https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
+- **메인 index.adoc에서 include 명령어로 가능합니다. :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
 - 그러나 위와 같이만 하면 미리보기에서만 보이고 실제 빌드시 나오지 않습니다. **build.gradle 설정에서 asciidoctor에 아래 내용을 추가해야 합니다.**
 
 ```jsx
@@ -157,7 +157,7 @@
 	baseDirFollowsSourceFile() // 다른 adoc 파일을 include 할 때 경로를 baseDir로 맞춘다.
 ```
 
-- **그래들 링크 :** [https://github.com/KimYongJ/test_code/blob/main/build.gradle](https://github.com/KimYongJ/test_code/blob/main/build.gradle)
+- **그래들 링크 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/build.gradle)
 
 ## [ 실제 배포시 REST Docs 보는 방법 ]
 
