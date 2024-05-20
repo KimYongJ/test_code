@@ -166,7 +166,7 @@
 - **의존성 주입 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/build.gradle)
 - **RestDocs 기본 설정 클래스 생성 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/RestDocsSupport.java)
 - **RestDocs 구현 클래스 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/docs/product/ProductControllerDocsTest.java)
-- **테스트 코드를 작성 후 실행하면 설정한 build경로에 adoc파일들이 생성 :** [코드 링크](https://github.com/KimYongJ/test_code/tree/main/build/docs/asciidoc)
+- **테스트 코드를 작성 후 실행하면 설정한 build경로에 adoc파일들이 생성 :** [코드 링크](https://github.com/KimYongJ/test_code/tree/main/build/generated-snippets/product-create-%EC%98%88%EC%8B%9C)
 - **src폴더 → docs폴더 → asciidoc 폴더 → index.adoc파일 생성 → 그 안에 해당 문법에 맞게 작성합니다 :** [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
 - **그래들의 Tasks → build → build 클릭시 빌드( or Tasks →documentation→asciidoctor) , 빌드 후 html 파일이 생성됩니다 :** [파일 링크](https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html)
 
