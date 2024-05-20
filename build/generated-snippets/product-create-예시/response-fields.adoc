@@ -1,0 +1,68 @@
+==== Response Fields
+
+|===
+
+|Path|Type|Optional|Description
+
+
+|`+code+`
+|`+Number+`
+|
+|코드
+
+
+|`+status+`
+|`+String+`
+|
+|상태
+
+
+|`+message+`
+|`+String+`
+|
+|메시지
+
+
+|`+data+`
+|`+Object+`
+|
+|응답 데이터
+
+
+|`+data.id+`
+|`+Number+`
+|
+|상품 ID
+
+
+|`+data.productNumber+`
+|`+String+`
+|
+|상품 번호
+
+
+|`+data.type+`
+|`+String+`
+|
+|상품 타입
+
+
+|`+data.sellingStatus+`
+|`+String+`
+|
+|상품 판매상태
+
+
+|`+data.name+`
+|`+String+`
+|
+|상품 이름
+
+
+|`+data.price+`
+|`+Number+`
+|
+|상품 가격
+
+    
+|===

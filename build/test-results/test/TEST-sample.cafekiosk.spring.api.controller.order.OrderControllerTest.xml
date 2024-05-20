@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.api.controller.order.OrderControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:41" hostname="DESKTOP-HLQBGOF" time="0.253">
+  <properties/>
+  <testcase name="신규 주문을 등록한다." classname="sample.cafekiosk.spring.api.controller.order.OrderControllerTest" time="0.241"/>
+  <testcase name="신규 주문을 등록할 때 상품번호는 1개 이상이어야 한다." classname="sample.cafekiosk.spring.api.controller.order.OrderControllerTest" time="0.011"/>
+  <system-out><![CDATA[00:13:39.455 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:13:39.465 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:13:39.497 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+00:13:39.507 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest], using SpringBootContextLoader
+00:13:39.510 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]: class path resource [sample/cafekiosk/spring/api/controller/order/OrderControllerTest-context.xml] does not exist
+00:13:39.511 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]: class path resource [sample/cafekiosk/spring/api/controller/order/OrderControllerTestContext.groovy] does not exist
+00:13:39.511 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:13:39.511 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]: OrderControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:13:39.566 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]
+00:13:39.617 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\UserKYJ\Desktop\cafekiosk\build\classes\java\main\sample\cafekiosk\CafekioskApplication.class]
+00:13:39.618 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration sample.cafekiosk.CafekioskApplication for test class sample.cafekiosk.spring.api.controller.order.OrderControllerTest
+00:13:39.620 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [sample.cafekiosk.spring.api.controller.order.OrderControllerTest]: using defaults.
+00:13:39.620 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+00:13:39.634 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@22d6cac2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@30cdae70, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1654a892, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2577d6c8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3163987e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6c000e0c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5f233b26, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@44f9779c, org.springframework.test.context.event.EventPublishingTestExecutionListener@6974a715, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5e8a459, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@43d455c9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4c9e9fb8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@9ec531, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40147317, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@210f0cc1]
+00:13:39.637 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@16943e88 testClass = OrderControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4604b900 testClass = OrderControllerTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@21ca139c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@be93ef2f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@cd524f36, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, [ImportsContextCustomizer@73d6d0c key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@34a02b4c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2024-05-18 00:13:40.039  INFO 13496 --- [    Test worker] s.c.s.a.c.order.OrderControllerTest      : Starting OrderControllerTest using Java 11.0.23 on DESKTOP-HLQBGOF with PID 13496 (started by UserKYJ in C:\Users\UserKYJ\Desktop\cafekiosk)
+2024-05-18 00:13:40.040  INFO 13496 --- [    Test worker] s.c.s.a.c.order.OrderControllerTest      : No active profile set, falling back to 1 default profile: "local"
+2024-05-18 00:13:41.527  INFO 13496 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-05-18 00:13:41.527  INFO 13496 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-18 00:13:41.528  INFO 13496 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-05-18 00:13:41.554  INFO 13496 --- [    Test worker] s.c.s.a.c.order.OrderControllerTest      : Started OrderControllerTest in 1.881 seconds (JVM running for 3.004)
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/orders/new
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"26"]
+             Body = {"productNumbers":["001"]}
+    Session Attrs = {}
+
+Handler:
+             Type = sample.cafekiosk.spring.api.controller.order.OrderController
+           Method = sample.cafekiosk.spring.api.controller.order.OrderController#createOrder(OrderCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"code":200,"status":"OK","message":"OK","data":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/orders/new
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"23"]
+             Body = {"productNumbers":null}
+    Session Attrs = {}
+
+Handler:
+             Type = sample.cafekiosk.spring.api.controller.order.OrderController
+           Method = sample.cafekiosk.spring.api.controller.order.OrderController#createOrder(OrderCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.web.bind.MethodArgumentNotValidException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"code":400,"status":"BAD_REQUEST","message":"상품 번호 리스트는 필수입니다.","data":null}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

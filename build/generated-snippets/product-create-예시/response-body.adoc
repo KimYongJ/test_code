@@ -1,0 +1,16 @@
+[source,options="nowrap"]
+----
+{
+  "code" : 200,
+  "status" : "OK",
+  "message" : "OK",
+  "data" : {
+    "id" : 1,
+    "productNumber" : "001",
+    "type" : "HANDMADE",
+    "sellingStatus" : "SELLING",
+    "name" : "�븘硫붾━移대끂",
+    "price" : 4000
+  }
+}
+----

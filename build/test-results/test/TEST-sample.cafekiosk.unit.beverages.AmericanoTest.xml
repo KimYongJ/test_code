@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.unit.beverages.AmericanoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.0">
+  <properties/>
+  <testcase name="name()" classname="sample.cafekiosk.unit.beverages.AmericanoTest" time="0.0"/>
+  <testcase name="price()" classname="sample.cafekiosk.unit.beverages.AmericanoTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

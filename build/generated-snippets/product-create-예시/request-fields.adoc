@@ -1,0 +1,32 @@
+==== Request Fields
+
+|===
+
+|Path|Type|Optional|Description
+
+
+|`+type+`
+|`+String+`
+|
+|상품 타입
+
+
+|`+sellingStatus+`
+|`+String+`
+|true
+|상품 판매상태
+
+
+|`+name+`
+|`+String+`
+|
+|상품 이름
+
+
+|`+price+`
+|`+Number+`
+|
+|상품 가격
+
+
+|===

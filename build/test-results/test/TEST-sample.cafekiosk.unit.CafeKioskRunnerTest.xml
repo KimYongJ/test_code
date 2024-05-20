@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.unit.CafeKioskRunnerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.005">
+  <properties/>
+  <testcase name="음료 추가해 주문목록에 저장 하고, 총 가격을 출력할 수 있다." classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.002"/>
+  <testcase name="오더 생성시 마감, 오픈 시간 외에는 주문을 생성할 수 없다." classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.001"/>
+  <testcase name="음료 추가시 주문목록에 담기고, 주문을 한꺼번에 삭제할 수 있다" classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.001"/>
+  <testcase name="음료는 1잔이상만 주문 할 수 있다." classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.0"/>
+  <testcase name="음료 추가시 주문 목록에 개수와 함께 저장되고 저장된 음료 객체를 삭제할 수 있다" classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.0"/>
+  <testcase name="음료 추가시 주문 목록에 개수가 같이 저장된다." classname="sample.cafekiosk.unit.CafeKioskRunnerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

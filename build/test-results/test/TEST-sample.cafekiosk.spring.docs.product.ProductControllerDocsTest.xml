@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.docs.product.ProductControllerDocsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.108">
+  <properties/>
+  <testcase name="신규 상품을 등록하는 api" classname="sample.cafekiosk.spring.docs.product.ProductControllerDocsTest" time="0.108"/>
+  <system-out><![CDATA[2024-05-18 00:13:46.296  INFO 13496 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2024-05-18 00:13:46.296  INFO 13496 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-18 00:13:46.296  INFO 13496 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/v1/products/new
+       Parameters = {}
+          Headers = [Content-Type:"application/json", Content-Length:"83"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = sample.cafekiosk.spring.api.controller.product.ProductController
+           Method = sample.cafekiosk.spring.api.controller.product.ProductController#createProduct(ProductCreateRequest)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"code":200,"status":"OK","message":"OK","data":{"id":1,"productNumber":"001","type":"HANDMADE","sellingStatus":"SELLING","name":"아메리카노","price":4000}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

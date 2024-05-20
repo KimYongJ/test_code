@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.065">
+  <properties/>
+  <testcase name="결제 완료 주문들을 조회하여 매출 통계 메일을 전송한다" classname="sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest" time="0.065"/>
+  <system-out><![CDATA[2024-05-18 00:13:45.402  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest], using SpringBootContextLoader
+2024-05-18 00:13:45.403  INFO 13496 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-05-18 00:13:45.403  INFO 13496 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest]: OrderStatisticsServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-18 00:13:45.405  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration sample.cafekiosk.CafekioskApplication for test class sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest
+2024-05-18 00:13:45.406  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-05-18 00:13:45.407  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37e99c0f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29ae939c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@439acac0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6a8d638, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d5a3b06, org.springframework.test.context.support.DirtiesContextTestExecutionListener@20b56542, org.springframework.test.context.transaction.TransactionalTestExecutionListener@35ec675e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@75b57ecd, org.springframework.test.context.event.EventPublishingTestExecutionListener@591be976, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@520f1862, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@40f53ea, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a1216b0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5c4404dd, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@76a2db3f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@8cc5602]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.7)
+
+2024-05-18 00:13:45.427  INFO 13496 --- [    Test worker] s.c.s.a.s.o.OrderStatisticsServiceTest   : Starting OrderStatisticsServiceTest using Java 11.0.23 on DESKTOP-HLQBGOF with PID 13496 (started by UserKYJ in C:\Users\UserKYJ\Desktop\cafekiosk)
+2024-05-18 00:13:45.427  INFO 13496 --- [    Test worker] s.c.s.a.s.o.OrderStatisticsServiceTest   : The following 1 profile is active: "test"
+2024-05-18 00:13:45.573  INFO 13496 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-18 00:13:45.598  INFO 13496 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2024-05-18 00:13:45.712  INFO 13496 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-18 00:13:45.719  INFO 13496 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-18 00:13:45.720  INFO 13496 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-18 00:13:45.720  INFO 13496 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists mail_send_history CASCADE 
+Hibernate: 
+    
+    drop table if exists order_product CASCADE 
+Hibernate: 
+    
+    drop table if exists orders CASCADE 
+Hibernate: 
+    
+    drop table if exists product CASCADE 
+Hibernate: 
+    
+    drop table if exists stock CASCADE 
+Hibernate: 
+    
+    create table mail_send_history (
+       id bigint generated by default as identity,
+        created_date_time timestamp,
+        modified_date_time timestamp,
+        content varchar(255),
+        from_email varchar(255),
+        subject varchar(255),
+        to_email varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table order_product (
+       id bigint generated by default as identity,
+        created_date_time timestamp,
+        modified_date_time timestamp,
+        order_id bigint,
+        product_id bigint,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table orders (
+       id bigint generated by default as identity,
+        created_date_time timestamp,
+        modified_date_time timestamp,
+        order_status varchar(255),
+        registered_date_time timestamp,
+        total_price integer not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table product (
+       id bigint generated by default as identity,
+        created_date_time timestamp,
+        modified_date_time timestamp,
+        name varchar(255),
+        price integer not null,
+        product_number varchar(255),
+        selling_status varchar(255),
+        type varchar(255),
+        primary key (id)
+    )
+Hibernate: 
+    
+    create table stock (
+       id bigint generated by default as identity,
+        created_date_time timestamp,
+        modified_date_time timestamp,
+        product_number varchar(255),
+        quantity integer not null,
+        primary key (id)
+    )
+Hibernate: 
+    
+    alter table order_product 
+       add constraint FKl5mnj9n0di7k1v90yxnthkc73 
+       foreign key (order_id) 
+       references orders
+Hibernate: 
+    
+    alter table order_product 
+       add constraint FKhnfgqyjx3i80qoymrssls3kno 
+       foreign key (product_id) 
+       references product
+2024-05-18 00:13:45.786  INFO 13496 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-05-18 00:13:45.786  INFO 13496 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-18 00:13:45.944  WARN 13496 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-18 00:13:46.194  INFO 13496 --- [    Test worker] s.c.s.a.s.o.OrderStatisticsServiceTest   : Started OrderStatisticsServiceTest in 0.786 seconds (JVM running for 7.645)
+2024-05-18 00:13:46.198  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@47d7792e testClass = OrderStatisticsServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest@4eb2a0c2, testMethod = sendOrderStatisticsMail@OrderStatisticsServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@10e7ade5 testClass = OrderStatisticsServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@6f5235a6, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@3c832820]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    SELECT
+        * 
+    FROM
+        orders o 
+    WHERE
+        o.registered_date_time >= ? 
+        AND o.registered_date_time < ? 
+        AND o.order_status = ?
+Hibernate: 
+    insert 
+    into
+        mail_send_history
+        (id, created_date_time, modified_date_time, content, from_email, subject, to_email) 
+    values
+        (default, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        mailsendhi0_.id as id1_0_,
+        mailsendhi0_.created_date_time as created_2_0_,
+        mailsendhi0_.modified_date_time as modified3_0_,
+        mailsendhi0_.content as content4_0_,
+        mailsendhi0_.from_email as from_ema5_0_,
+        mailsendhi0_.subject as subject6_0_,
+        mailsendhi0_.to_email as to_email7_0_ 
+    from
+        mail_send_history mailsendhi0_
+Hibernate: 
+    delete 
+    from
+        order_product
+Hibernate: 
+    delete 
+    from
+        orders
+Hibernate: 
+    delete 
+    from
+        product
+Hibernate: 
+    delete 
+    from
+        mail_send_history
+2024-05-18 00:13:46.262  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@47d7792e testClass = OrderStatisticsServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderStatisticsServiceTest@4eb2a0c2, testMethod = sendOrderStatisticsMail@OrderStatisticsServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@10e7ade5 testClass = OrderStatisticsServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@6f5235a6, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.api.service.order.OrderServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:45" hostname="DESKTOP-HLQBGOF" time="0.133">
+  <properties/>
+  <testcase name="중복되는 상품번호 리스트로 주문을 생성할 수 있다." classname="sample.cafekiosk.spring.api.service.order.OrderServiceTest" time="0.064"/>
+  <testcase name="주문번호 리스트를 받아 주문을 생성한다." classname="sample.cafekiosk.spring.api.service.order.OrderServiceTest" time="0.016"/>
+  <testcase name="재고와 관련된 상품이 포함되어 있는 주문번호 리스트를 받아 주문을 생성한다." classname="sample.cafekiosk.spring.api.service.order.OrderServiceTest" time="0.035"/>
+  <testcase name="재고가 부족한 상품으로 주문을 생성하려는 경우 예외가 발생한다." classname="sample.cafekiosk.spring.api.service.order.OrderServiceTest" time="0.018"/>
+  <system-out><![CDATA[2024-05-18 00:13:45.257  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [sample.cafekiosk.spring.api.service.order.OrderServiceTest], using SpringBootContextLoader
+2024-05-18 00:13:45.258  INFO 13496 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [sample.cafekiosk.spring.api.service.order.OrderServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-05-18 00:13:45.258  INFO 13496 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [sample.cafekiosk.spring.api.service.order.OrderServiceTest]: OrderServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-05-18 00:13:45.264  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration sample.cafekiosk.CafekioskApplication for test class sample.cafekiosk.spring.api.service.order.OrderServiceTest
+2024-05-18 00:13:45.266  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-05-18 00:13:45.266  INFO 13496 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@444958a4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@19aa9540, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4cb084b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7d911f95, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7313e4fb, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3e5e7f4c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@620ba19c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@179367ff, org.springframework.test.context.event.EventPublishingTestExecutionListener@7b4b6dca, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3622c9f0, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@99a89e9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5baabba, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@253fb3fa, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@57283e4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@58fa8762]
+2024-05-18 00:13:45.269  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@5a85f41b, testMethod = createOrderWithDuplicateProductNumbers@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@49c74506]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_3_,
+        product0_.created_date_time as created_2_3_,
+        product0_.modified_date_time as modified3_3_,
+        product0_.name as name4_3_,
+        product0_.price as price5_3_,
+        product0_.product_number as product_6_3_,
+        product0_.selling_status as selling_7_3_,
+        product0_.type as type8_3_ 
+    from
+        product product0_ 
+    where
+        product0_.product_number in (
+            ? , ?
+        )
+Hibernate: 
+    select
+        stock0_.id as id1_4_,
+        stock0_.created_date_time as created_2_4_,
+        stock0_.modified_date_time as modified3_4_,
+        stock0_.product_number as product_4_4_,
+        stock0_.quantity as quantity5_4_ 
+    from
+        stock stock0_ 
+    where
+        stock0_.product_number in (
+            ?
+        )
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    delete 
+    from
+        order_product
+Hibernate: 
+    delete 
+    from
+        orders
+Hibernate: 
+    delete 
+    from
+        product
+Hibernate: 
+    select
+        order0_.id as id1_2_,
+        order0_.created_date_time as created_2_2_,
+        order0_.modified_date_time as modified3_2_,
+        order0_.order_status as order_st4_2_,
+        order0_.registered_date_time as register5_2_,
+        order0_.total_price as total_pr6_2_ 
+    from
+        orders order0_
+Hibernate: 
+    delete 
+    from
+        stock
+2024-05-18 00:13:45.331  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@5a85f41b, testMethod = createOrderWithDuplicateProductNumbers@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2024-05-18 00:13:45.333  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@5feceb2f, testMethod = test@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@49c74506]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_3_,
+        product0_.created_date_time as created_2_3_,
+        product0_.modified_date_time as modified3_3_,
+        product0_.name as name4_3_,
+        product0_.price as price5_3_,
+        product0_.product_number as product_6_3_,
+        product0_.selling_status as selling_7_3_,
+        product0_.type as type8_3_ 
+    from
+        product product0_ 
+    where
+        product0_.product_number in (
+            ? , ?
+        )
+Hibernate: 
+    select
+        stock0_.id as id1_4_,
+        stock0_.created_date_time as created_2_4_,
+        stock0_.modified_date_time as modified3_4_,
+        stock0_.product_number as product_4_4_,
+        stock0_.quantity as quantity5_4_ 
+    from
+        stock stock0_ 
+    where
+        stock0_.product_number in (
+            ?
+        )
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    delete 
+    from
+        order_product
+Hibernate: 
+    delete 
+    from
+        orders
+Hibernate: 
+    delete 
+    from
+        product
+Hibernate: 
+    select
+        order0_.id as id1_2_,
+        order0_.created_date_time as created_2_2_,
+        order0_.modified_date_time as modified3_2_,
+        order0_.order_status as order_st4_2_,
+        order0_.registered_date_time as register5_2_,
+        order0_.total_price as total_pr6_2_ 
+    from
+        orders order0_
+Hibernate: 
+    delete 
+    from
+        stock
+2024-05-18 00:13:45.348  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@5feceb2f, testMethod = test@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2024-05-18 00:13:45.349  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@35ca0dac, testMethod = createOrderWithStock@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@49c74506]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stock
+        (id, created_date_time, modified_date_time, product_number, quantity) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stock
+        (id, created_date_time, modified_date_time, product_number, quantity) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_3_,
+        product0_.created_date_time as created_2_3_,
+        product0_.modified_date_time as modified3_3_,
+        product0_.name as name4_3_,
+        product0_.price as price5_3_,
+        product0_.product_number as product_6_3_,
+        product0_.selling_status as selling_7_3_,
+        product0_.type as type8_3_ 
+    from
+        product product0_ 
+    where
+        product0_.product_number in (
+            ? , ? , ? , ?
+        )
+Hibernate: 
+    select
+        stock0_.id as id1_4_,
+        stock0_.created_date_time as created_2_4_,
+        stock0_.modified_date_time as modified3_4_,
+        stock0_.product_number as product_4_4_,
+        stock0_.quantity as quantity5_4_ 
+    from
+        stock stock0_ 
+    where
+        stock0_.product_number in (
+            ? , ? , ?
+        )
+Hibernate: 
+    insert 
+    into
+        orders
+        (id, created_date_time, modified_date_time, order_status, registered_date_time, total_price) 
+    values
+        (default, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        order_product
+        (id, created_date_time, modified_date_time, order_id, product_id) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    update
+        stock 
+    set
+        created_date_time=?,
+        modified_date_time=?,
+        product_number=?,
+        quantity=? 
+    where
+        id=?
+Hibernate: 
+    update
+        stock 
+    set
+        created_date_time=?,
+        modified_date_time=?,
+        product_number=?,
+        quantity=? 
+    where
+        id=?
+Hibernate: 
+    select
+        stock0_.id as id1_4_,
+        stock0_.created_date_time as created_2_4_,
+        stock0_.modified_date_time as modified3_4_,
+        stock0_.product_number as product_4_4_,
+        stock0_.quantity as quantity5_4_ 
+    from
+        stock stock0_
+Hibernate: 
+    delete 
+    from
+        order_product
+Hibernate: 
+    delete 
+    from
+        orders
+Hibernate: 
+    delete 
+    from
+        product
+Hibernate: 
+    select
+        order0_.id as id1_2_,
+        order0_.created_date_time as created_2_2_,
+        order0_.modified_date_time as modified3_2_,
+        order0_.order_status as order_st4_2_,
+        order0_.registered_date_time as register5_2_,
+        order0_.total_price as total_pr6_2_ 
+    from
+        orders order0_
+Hibernate: 
+    delete 
+    from
+        stock
+2024-05-18 00:13:45.383  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@35ca0dac, testMethod = createOrderWithStock@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+2024-05-18 00:13:45.384  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@43376a03, testMethod = createOrderWithNoStock@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@49c74506]; rollback [true]
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        product
+        (id, created_date_time, modified_date_time, name, price, product_number, selling_status, type) 
+    values
+        (default, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stock
+        (id, created_date_time, modified_date_time, product_number, quantity) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        stock
+        (id, created_date_time, modified_date_time, product_number, quantity) 
+    values
+        (default, ?, ?, ?, ?)
+Hibernate: 
+    select
+        product0_.id as id1_3_,
+        product0_.created_date_time as created_2_3_,
+        product0_.modified_date_time as modified3_3_,
+        product0_.name as name4_3_,
+        product0_.price as price5_3_,
+        product0_.product_number as product_6_3_,
+        product0_.selling_status as selling_7_3_,
+        product0_.type as type8_3_ 
+    from
+        product product0_ 
+    where
+        product0_.product_number in (
+            ? , ? , ? , ?
+        )
+Hibernate: 
+    select
+        stock0_.id as id1_4_,
+        stock0_.created_date_time as created_2_4_,
+        stock0_.modified_date_time as modified3_4_,
+        stock0_.product_number as product_4_4_,
+        stock0_.quantity as quantity5_4_ 
+    from
+        stock stock0_ 
+    where
+        stock0_.product_number in (
+            ? , ? , ?
+        )
+Hibernate: 
+    delete 
+    from
+        order_product
+Hibernate: 
+    delete 
+    from
+        orders
+Hibernate: 
+    delete 
+    from
+        product
+Hibernate: 
+    select
+        order0_.id as id1_2_,
+        order0_.created_date_time as created_2_2_,
+        order0_.modified_date_time as modified3_2_,
+        order0_.order_status as order_st4_2_,
+        order0_.registered_date_time as register5_2_,
+        order0_.total_price as total_pr6_2_ 
+    from
+        orders order0_
+Hibernate: 
+    delete 
+    from
+        stock
+2024-05-18 00:13:45.401  INFO 13496 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@53f67af6 testClass = OrderServiceTest, testInstance = sample.cafekiosk.spring.api.service.order.OrderServiceTest@43376a03, testMethod = createOrderWithNoStock@OrderServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@35abfeba testClass = OrderServiceTest, locations = '{}', classes = '{class sample.cafekiosk.CafekioskApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52350abb, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@fac80, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1fe8d51b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@60d84f61, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@1dc9f5ad, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@d278d2b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,9 @@
+[source,options="nowrap"]
+----
+{
+  "type" : "HANDMADE",
+  "sellingStatus" : "SELLING",
+  "name" : "�븘硫붾━移대끂",
+  "price" : 4000
+}
+----

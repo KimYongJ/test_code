@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.domain.stock.StockDynamicTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.0">
+  <properties/>
+  <testcase name="재고를 주어진 개수 만큼 차감할 수 있다." classname="sample.cafekiosk.spring.domain.stock.StockDynamicTest" time="0.0"/>
+  <testcase name="재고 보다 많은 수의 수량을 차감 시도하는 경우 예외가 발생한다." classname="sample.cafekiosk.spring.domain.stock.StockDynamicTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

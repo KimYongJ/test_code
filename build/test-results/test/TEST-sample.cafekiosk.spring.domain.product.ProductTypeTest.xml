@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.spring.domain.product.ProductTypeTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:46" hostname="DESKTOP-HLQBGOF" time="0.013">
+  <properties/>
+  <testcase name="[1] productType=HANDMADE, expected=false" classname="sample.cafekiosk.spring.domain.product.ProductTypeTest" time="0.011"/>
+  <testcase name="[2] productType=BOTTLE, expected=true" classname="sample.cafekiosk.spring.domain.product.ProductTypeTest" time="0.0"/>
+  <testcase name="[3] productType=BAKERY, expected=true" classname="sample.cafekiosk.spring.domain.product.ProductTypeTest" time="0.0"/>
+  <testcase name="상품 타입이 재고 관련 타입인지를 체크한다." classname="sample.cafekiosk.spring.domain.product.ProductTypeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

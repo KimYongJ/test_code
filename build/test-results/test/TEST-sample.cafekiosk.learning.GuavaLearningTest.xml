@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.cafekiosk.learning.GuavaLearningTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-05-17T15:13:39" hostname="DESKTOP-HLQBGOF" time="0.092">
+  <properties/>
+  <testcase name="멀티맵 기능 확인" classname="sample.cafekiosk.learning.GuavaLearningTest" time="0.071"/>
+  <testcase name="1개 벨류 삭제" classname="sample.cafekiosk.learning.GuavaLearningTest" time="0.003"/>
+  <testcase name="키에 대한 일괄 삭제" classname="sample.cafekiosk.learning.GuavaLearningTest" time="0.001"/>
+  <testcase name="주어진 개수만큼 list를 파티셔닝 한다." classname="sample.cafekiosk.learning.GuavaLearningTest" time="0.006"/>
+  <testcase name="주어진 개수만큼 list를 파티셔닝 한다." classname="sample.cafekiosk.learning.GuavaLearningTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
