@@ -31,7 +31,7 @@
   - 구현에 대한 빠른 피드백을 받을 수 있습니다.
   - 과감한 리팩토링이 가능해집니다.
 
-## [ **BDD ( Behavior Driven Development ) / given , when , then ]\*\*
+## [ BDD ( Behavior Driven Development ) / given , when , then ]
 
 - TDD에서 파생된 개발 방법으로 함수 단위의 테스트에 집중하기보다, 시나리오에 기반한 **테스트케이스(TC) 자체에** 집중하여 테스트 하는 것 입니다.
 - 개발자가 아닌 사람이 봐도 이해할 수 있을 정도의 추상화 수준(레벨)을 권장합니다.
@@ -40,7 +40,7 @@
   - **When :** 시나리오 행동 진행
   - **Then :** 시나리오 진행에 대한 결과 명시, 검증
 
-## [ **DisplayName 작성 ]\*\*
+## [ DisplayName 작성 ]
 
 - **메서드 자체의 관점 보다, 도메인 정책 관점으로 작성 해야 합니다.**
 - **Given / When / Then 방식 기술**
@@ -48,7 +48,7 @@
   - **음료 1개를 추가함면 주문 목록에 담긴다.(**테스트 행위에 대한 결과까지 입력)
   - **영업 시작 시간 이전에는 주문을 생성할 수 없다.**( 메서드 자체의 관점보다 도메인 정책 관점으로 한층 더 추상화된 내용 작성 )
 
-## [ **Transactional 작성 팁 ]\*\*
+## [ Transactional 작성 팁 ]
 
 - **트랜젝션 어노테이션 사용시 전체 클래스에는 readOnly=true를 하고, 별도 수정 작업이 있는 함수만 트랜젝션 어노테이션을 따로 넣는 것이 좋습니다. 이유는 아래와 같습니다.**
 - **성능 최적화**
@@ -58,7 +58,7 @@
   - 코드에서 **readOnly=true**를 명시적으로 사용함으로써, 해당 서비스나 메서드가 데이터를 변경하지 않고 단지 읽기만을 수행한다는 것을 분명하게 표현합니다.
 - **CQRS (Command Query Responsibility Segregation) 원칙의 적용**
   - **명령과 조회의 분리**: CQRS 패턴은 시스템을 명령(쓰기 작업)과 조회(읽기 작업)로 분리하도록 권장합니다. 이 패턴을 적용하면 시스템의 복잡성을 관리하기 쉬워지고, 성능과 확장성이 향상될 수 있습니다. 읽기 작업의 빈도가 높은 대부분의 애플리케이션에서 특히 유용합니다.
-- [https://github.com/KimYongJ/test_code/blob/main/src/main/java/sample/cafekiosk/spring/api/product/ProductService.java](https://github.com/KimYongJ/test_code/blob/main/src/main/java/sample/cafekiosk/spring/api/product/ProductService.java)
+- [코드 링크](https://github.com/KimYongJ/test_code/blob/main/src/main/java/sample/cafekiosk/spring/api/product/ProductService.java)
 
 ## [ Repository 테스트 ]
 
@@ -68,7 +68,7 @@
   - **deleteAllInBatch :** 테이블을 지울 때 외래키 조건 등 영향을 받기 때문에 삭제할 레포지토리 순서를 잘 계산해야 합니다.
   - **deleteAll :** select로 해당 테이블을 불러 온 후 하나씩 데이터를 지웁니다. 그렇기에 쿼리가 더 많이 실행 됩니다. deleteAllInBatch 어노테이션 보다는 삭제할 레포지토리 순서를 신경쓰지 않을 수 있습니다. (순서가 아주 상관없지는 않고, 외래키를 찾을 수 있다면 순서에 상관없이 select 후 지울 수 있습니다.)
 
-## [ **비지니스 계층 (**Service) 테스트 ]
+## [ 비지니스 계층 (Service) 테스트 ]
 
 - 비지니스 계층 테스트 주의사항
   - 하나의 함수 테스트시는 문제 없지만 테스트 클래스 전체를 테스트할 때 레포지토리에 저장한 내용이 다른 테스트 함수에 영향을 줍니다. 이를 해결하기 위해 AfterEach 어노테이션을 사용합니다.
@@ -89,7 +89,7 @@
   - **Mockito의 when메서드를 사용해 모킹처리한 함수를 넣는다. 이 때 파라미터는 any 함수를 사용해 매개변수의 클래스를 넣어주고, thenReturn 함수를 사용해 반환 값을 정해준다.**
 - [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
 
-## [ **BDDMockito ]\*\*
+## [ BDDMockito ]
 
 - **Mockito를 상속받은 래핑 클래스로써, 모든 동작이 Mockito와 동일하나 BDD스타일로 커스텀한 것입니다.**
 - [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/api/service/mail/MailServiceTest.java)
@@ -98,13 +98,13 @@
 
 - Given 데이터를 BeforeEach 나 BeforeAll 어노테이션을 사용한 함수에 미리 작성해 놓을 경우, 하나의 테스트 클래스가 그 데이터에 종속되기 때문에 사용은 가급적 지양 하는 것이 좋습니다.
 
-## [ **ParameterizedTest ]\*\*
+## [ ParameterizedTest ]
 
 - 값이나 환경에 대한 데이터들을 바꿔가면서 여러번 테스트하고 싶을 때 일반 Test어노테이션이 아니라 ParameterizedTest 어노테이션을 사용합니다.
 - **CsvSource 어노테이션 :** comma-separated values의 약자로 몇 가지 필드를 콤마(,)로 구분한 텍스트 데이터 파일로 해당 어노테이션에 값을 넣어 테스트합니다.
 - [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductTypeTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/product/ProductTypeTest.java)
 
-## [ **DynamicTest ]\*\*
+## [ DynamicTest ]
 
 - 단계 별로 행위 검증을 수행하고 싶을 때 사용, 일반 테스트 어노테이션이 아닌 TestFactory 어노테이션을 사용합니다. 리턴 값으로 Collection을 반환합니다.
 - [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/stock/StockDynamicTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/spring/domain/stock/StockDynamicTest.java)
@@ -120,7 +120,7 @@
 - 잘 모르는 기능이나 라이브러리, 프레임워크를 학습하기 위해 작성하는 테스트 이며 Guava를 학습하는 예시 입니다.
 - [https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/learning/GuavaLearningTest.java](https://github.com/KimYongJ/test_code/blob/main/src/test/java/sample/cafekiosk/learning/GuavaLearningTest.java)
 
-## [ **REST Docs ]\*\*
+## [ REST Docs ]
 
 - REST Docs는 API를 문서화 하고 싶을 때 사용하는 API 문서 자동화 도구입니다. 기본적으로 AsciiDoc을 사용해 문서를 작성합니다.
 - **장점**
@@ -138,14 +138,14 @@
 - **src폴더 → docs폴더 → asciidoc 폴더 → index.adoc파일 생성 → 그 안에 해당 문법에 맞게 작성합니다 :** [https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
 - **그래들의 Tasks → build → build 클릭시 빌드( or Tasks →documentation→asciidoctor) , 빌드 후 html 파일이 생성됩니다 :** [https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html](https://github.com/KimYongJ/test_code/blob/main/build/docs/asciidoc/index.html)
 
-## [ **REST Docs 생성시 Optional한 데이터 표시법 ]\*\*
+## [ REST Docs 생성시 Optional한 데이터 표시법 ]
 
 - API에서 특정 값은 필수이고, 다른 것은 아닌 것이 있을 수 있습니다. 이 때 RestDoc 생성시 커스텀한 컬럼을 추가할 수 있습니다.
 - **test디렉토리안에 resources 디렉토리 → org → springframework → restdocs → templates 까지 만든 후 response, request의 템플릿을 만들 수 있습니다**
   - [https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/request-fields.snippet](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/request-fields.snippet)
   - [https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/response-fields.snippet](https://github.com/KimYongJ/test_code/blob/main/src/test/resources/org/springframework/restdocs/templates/response-fields.snippet)
 
-## [ 여러개의 **REST Docs 합치는 방법 ]\*\*
+## [ 여러개의 REST Docs 합치는 방법 ]
 
 - **메인 index.adoc에서 include 명령어로 가능합니다. :** [https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1](https://github.com/KimYongJ/test_code/blob/main/src/docs/asciidoc/index.adoc?plain=1)
 - 그러나 위와 같이만 하면 미리보기에서만 보이고 실제 빌드시 나오지 않습니다. **build.gradle 설정에서 asciidoctor에 아래 내용을 추가해야 합니다.**
